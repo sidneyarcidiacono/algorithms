@@ -99,3 +99,20 @@ Our worst case is a very large prime number for which the loop will run for ever
     In this case, 3 and 3 are both equal to the square root of 9.
 
   - See the improved algorithm in prime.js: we've improved the time complexity from O(n) to O(sqrt(n)) by leveraging this simple math principle
+
+
+### Identifying Big O Quickly:
+
+We're really only interested in the Asymptotic analysis of an algorithm: we don't really care about the specifics, just the general trend.
+
+You should be able to see the general trend just looking at an algorithm without counting executions and so on.
+
+Couple of rules to consider:
+
+1. Look for (single) loops (O(n))
+2. Nested loops are a hint towards quadratic time complexity
+3. Algorithm without other function calls inside of it and without loops, you're most likely dealing with constant time complexity
+
+Single loops are most likely going to be linear time complexity, but you can take a closer look to see if you can get more specific (like in our isPrime example, we were able to deduce O(sqrt(n)) which is a bit more specific)
+
+Check exit conditions, analyze the loop.
