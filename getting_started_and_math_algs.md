@@ -116,3 +116,27 @@ Couple of rules to consider:
 Single loops are most likely going to be linear time complexity, but you can take a closer look to see if you can get more specific (like in our isPrime example, we were able to deduce O(sqrt(n)) which is a bit more specific)
 
 Check exit conditions, analyze the loop.
+
+### O(log n)
+
+An example where initially with smaller inputs, the number of iterations increases rapidly but then with larger inputs the rate of growth slows to near-constant time complexity, these are good cases for O(log n) time complexity.
+
+Even if you don't calculate this mathematically (which, like in our isPowerOfTwo function would be quite hard because we have different cases), you can indicate a logarithmic time complexity by analyzing the trend of such an algorithm.
+
+### Bitwise Operators:
+
+Bitwise magic!
+
+(Unsigned) Powers of Two, in binary form, always have just one bit:
+
+ - 1: 1
+ - 2: 10
+ - 4: 100
+
+ This means that these numbers are always represented in binary with a one at the beginning and zeroes at the end
+
+ We can use this to check if a number is a power of two - we can use the bitwise & operator to leverage this and do a simpler check in our isPowerOfTwo function.
+
+ Splitting the data you're running your operation on into chunks as part of a loop is a big indicator of logarithmic time complexity.
+
+ 
