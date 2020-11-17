@@ -48,6 +48,8 @@ Avoid unnecessasry recursive steps by storing data:
 
 What we did with our iterative solution
 
+Can also consider a bottom up approach recursion with memoization 
+
 ### The Master Theorem:
 
 How do you derive Big O for complex recursive functions?
