@@ -48,3 +48,17 @@ Worst Case: items sorted in wrong order (reverse from intended) -- O(n^2)
 
 
 ### Quicksort - Theory
+
+Uses recursion
+
+Use **pivot elements to split array** into smaller chunks -- elements **bigger, smaller, and equal than the pivot element.** **Repeat** that process for all chunks and concat the sorted chunks.
+
+You pick a pivot element: the first element in the array. You then create some chunks:
+
+    - Smaller Chunk
+    - Equal (center) chunk
+    - Larget Chunk
+
+You'll then put the pivot element into the center chunk along with any elements of the same value, and then put the rest of the elements in their corresponding "chunk". So this way, you put anything larger than the pivot value into the larger chunk, and anything smaller into the smaller chunk.
+
+You then do this again, picking a new pivot element and creating three new chunks. Remember that each "chunk" is an array, so we would pick a pivot element for each of our existing chunks and place them in a new one accordingly. If you have only one element in any of our original chunks, they stay where they are and are compared to our new chunks.
