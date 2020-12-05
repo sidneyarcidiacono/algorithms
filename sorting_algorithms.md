@@ -62,3 +62,40 @@ You pick a pivot element: the first element in the array. You then create some c
 You'll then put the pivot element into the center chunk along with any elements of the same value, and then put the rest of the elements in their corresponding "chunk". So this way, you put anything larger than the pivot value into the larger chunk, and anything smaller into the smaller chunk.
 
 You then do this again, picking a new pivot element and creating three new chunks. Remember that each "chunk" is an array, so we would pick a pivot element for each of our existing chunks and place them in a new one accordingly. If you have only one element in any of our original chunks, they stay where they are and are compared to our new chunks.
+
+
+### Quicksort - Time Complexity:
+
+Best Case: Items are sorted randomly - NOT in right or wrong order -- O(n * log n)
+
+Average Case: Pretty much the same as best case. So we're going to have O(n * log n)
+
+Worst Case: Items are already sorted (order does not matter) - this will lead us to having all our items in our bigger items array or chunk, and we will end up with -- O(n^2).
+
+Why? *In our best case we have n * log n because we're splitting our problem into smaller problems. If the array is already sorted, since we're always taking the first element as a pivot element, we effectively never split the problem. We go through the array multiple times with a loop inside a nested function call*
+
+**How do we derive O(n * log n)?** Go back to the notes on the Master Theorem: the steps for deriving the time complexity of recursive functions.
+
+### Merge Sort - Theory:
+
+Quicksort is better than bubble sort, but we still have quadratic time complexity in our worst case.
+
+Merge sort:
+
+**Split array multiple times** until we have only **2-element arrays** left -- we then sort those arrays and **merge them back together**.
+
+We will do this recursively.
+
+We always start by splitting down the middle.
+
+In each two-element array, we sort the items only within that two-element array.
+
+We merge them with some extra logic where things end up in the right order - we don't just concatenate them without ordering them.
+
+### Merge Sort - Time Complexity:
+
+Best Case: O(n * log n)
+Average Case: O(n * log n)
+Worst Case: O(n * log n)
+
+Because of the way we split the arrays, we ALWAYS have the same time complexity with this algorithm. 
