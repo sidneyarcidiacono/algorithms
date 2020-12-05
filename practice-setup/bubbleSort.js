@@ -21,6 +21,8 @@ const sort = array => {
   return resultArray
 }
 
+// Space complexity: O(1)
+
 const sortedArray = sort([5, 10, -3, -10, 1, 100, 99])
 
 console.log(sortedArray)
