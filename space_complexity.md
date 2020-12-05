@@ -57,3 +57,21 @@ Space complexity for recursive binary search should be approx. O(log n) because 
 For the same reasons as before (permanent data stored doesn't change w n): O(1)
 
 ### Quicksort - Space Complexity:
+
+In our quicksort algorithm, we create new arrays outside of our loops. This still would lead to constant space complexity, however, because we then derive a new element in each loop iteration that is appended to one of these arrays, we are actually deriving new elements that are permanently stored in memory and which increase the size of our arrays. However, since we're shifting this element we append from our initial array, you could argue that there is no actual impact overall on memory usage.
+
+However, then we call ourselves twice in our recursive call. In these calls, we create new values in memory.
+
+We have a space complexity therefore of O(n) because the number of items we create in memory increase with our input (and the number of function calls).
+
+It isn't O(n^2) because only one branch of the recursive tree executes then at a time, so we never have more than n extra values created in space.
+
+#### TODO:
+
+O(log n) is possible with a slightly different approach of this algorithm, which I will implement in quicksort.js at a later time.
+
+### Merge Sort - Space Complexity:
+
+In merge sort, we call ourselves with shorter arrays recursively, creating a bunch of new arrays in memory. This depends on n - the bigger our original array is, the more times we split and the more subsequent arrays we create in memory.
+
+Because of this recursion, we have a space complexity of O(n), or a linear space complexity.
