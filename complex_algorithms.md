@@ -97,4 +97,78 @@ Let's look at our original solution and try to optimize it with memoization to f
 
 So, what's our new time complexity?
 
-Now, we have O(n*c) where c is our capacity. This is because we depend on our knapsack's capacity as well as our input because with a larger capacity, we have more options we need to evaluate. 
+Now, we have O(n*c) where c is our capacity. This is because we depend on our knapsack's capacity as well as our input because with a larger capacity, we have more options we need to evaluate.
+
+### Greedy vs. Dynamic Algorithms:
+
+**Greedy**:
+
+An algorithm where you try to make the best possible decision in every step and hope that it leads to the overall best solution. Greedy algorithms are often faster to set up and come up with, but they don't necessarily provide the best runtime and/or result.
+
+**Dynamic Algorithms**:
+
+An algorithm where you're most likely using memoization, because you evaluate all possible solutions and find overall best solution via comparison.
+
+When using dynamic algorithms or dynamic programming, you're often using a "divide and conquer" approach: dividing the problem into smaller, easier to solve subproblems.
+
+Writing these can be a bit more complex, because you have to split up the problem and really consider all approaches.
+
+*So*
+
+It's not a bad idea to try greedy approaches. Just be open to optimizing and changing these around.
+
+### Final Problem Solving Plan:
+
+1. Verify Inputs/Problem
+
+2. Think about Problem & Verbal solution
+
+3. Write down a first version
+
+    Maybe go with a simple, greedy approach first
+
+4. Verify the results - test with edge cases & different inputs
+
+5. Derive time complexity
+
+6. Explore alternative approaches & look for improvement & improvement potential
+
+### The Change Making Problem:
+
+You have an array of *available coins*, i.e:
+
+[100, 50, 20, 10, 5, 2, 1 ] where "100" is one dollar
+
+You have a *target value*, i.e:
+
+129
+
+Write an algorithm that returns the coins and the number of each coin that gets to the target value - using the least amount of coins.
+
+We're going to tackle this problem using our plan.
+
+1. Verify inputs:
+
+    Is this a static array of coins, (should we always expect the input I demonstrated above?) or should we be able to take any input?
+
+    Are the coins always ordered?
+
+    Do we need an exact solution, or should we round to use fewer coins?
+
+    *For now, let's assume the inputs are ordered and stable*
+
+2. Think about problem & verbal solutions
+
+    Greedy approach first: go through all coins and decide for each if it should be used.
+
+3. Write down our first version (our greedy approach)
+
+4. Derive time complexity
+
+    What is the time complexity of this approach?
+
+    Currently, this is O(n) where n is the length of our coins array
+
+    Can we do better? We can slightly optimize by checking if coins are less than our given target, but it won't make a huge difference.
+
+    For this problem with our static coins array, linear is the best we  can do. We can also argue that since the coins array in our example is set in stone, this is technically constant time. However, for my own purposes I'm going to say that this might be flexible and say linear time.
