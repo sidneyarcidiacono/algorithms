@@ -89,3 +89,27 @@ This is due to the way that we derive permutations:
 You unfortunately won't find an algorithm that does better. There are ways to write this differently, but if you have to derive all of these combinations, you will have factorial time complexity.
 
 ### Permutations with Repetition:
+
+We have very similar logic to our non repetitive permutations algorithm.
+
+**Time Complexity**:
+
+We still don't do better than factorial time here, since we have more possible combinations. However, now, both our input options and our length impact how long our algorithm takes to run.
+
+O(n^r) => where n is the number of options and r is the length that we provide.
+
+*How do we derive this?*
+
+We know that typically if we have nested loops we're going to have quadratic time. However, since we take two inputs and can easily tell that both inputs have a strong impact on the amount of results we're provided, this is a strong indication that both inputs have an impact on our time complexity.
+
+To find out how our inputs are related, we can simplify our inputs and run our code.
+
+Ex: if we give our algorithm:
+
+[1, 2] and length 2, we get 4 combinations.
+
+[1, 2, 3, 4] and length 2, we get 16 combinations.
+
+[1, 2, 3] and length 3, we get 27 combinations.
+
+Which we can very clearly see demonstrate that our algorithm is running at (n^r) rather than the other way around or on simply quadratic or factorial time, for example. 
