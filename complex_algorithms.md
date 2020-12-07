@@ -163,7 +163,9 @@ We're going to tackle this problem using our plan.
 
 3. Write down our first version (our greedy approach)
 
-4. Derive time complexity
+4. Verify results
+
+5. Derive time complexity
 
     What is the time complexity of this approach?
 
@@ -172,3 +174,33 @@ We're going to tackle this problem using our plan.
     Can we do better? We can slightly optimize by checking if coins are less than our given target, but it won't make a huge difference.
 
     For this problem with our static coins array, linear is the best we  can do. We can also argue that since the coins array in our example is set in stone, this is technically constant time. However, for my own purposes I'm going to say that this might be flexible and say linear time.
+
+6. Explore alternate approaches. We'll do this below and in the code file, where we'll look at a variation of the problem and a different approach to solving. As stated above, our greedy solution was actually quite good, so we won't be  totally optimizing that one
+
+### The More Difficult Change Making Problem
+
+Where we have a variable coins array, and where the coins array might not look like any currency we have, but more something like this:
+
+[ 8, 6, 5, 1 ]
+
+And we'll still have a target value ex:
+
+11
+
+We still want to get to the target in the least amount of coins.
+
+For this case, our greedy algorithm doesn't work. We'll come up with a slight variation.
+
+We're assuming that our coins are ordered and that we still want an exact solution.
+
+For this, we could use a brute force approach, where we try all of the different options and choose the solution that uses the least # of coins.
+
+What is the time complexity of brute force approach?
+
+    We call our original compute Change fn which has linear time, and we have two loops. This gives us something like O(n^2) * n which simplifies to O(n^2)
+
+    Because we split up the coins array, it's actually going to be slightly better than quadratic time, but we have a tendency towards quadratic time complexity.
+
+Can we do better?
+
+    We can't do constant time. It's also unlikely to reach linear time either, since we have some extra problem complexity. Logarithmic time is also not possible here.

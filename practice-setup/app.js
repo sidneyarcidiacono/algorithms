@@ -18,8 +18,31 @@ const computeChange = (coins, amount) => {
   return calculatedChange
 }
 
+// THE HARDER CHANGE MAKING PROBLEM
+
+const computeChangeBruteForce = (coins, amount) => {
+  const results = []
+  for (let i = 0; i < coins.length; i++) {
+    results.push(computeChange(coins.slice(i), amount))
+  }
+
+  let smallestAmountOfCoins = Number.MAX_SAFE_INTEGER
+  let finalResult
+  for (const result of results) {
+    if (result.numberOfCoins < smallestAmountOfCoins) {
+      smallestAmountOfCoins = result.numberOfCoins
+      finalResult = result
+    }
+  }
+  return finalResult
+}
+
 const coins = [100, 50, 20, 10, 5, 2, 1]
-const targetAmount = 50
+const randomCoins = [8, 6, 5, 1]
+const targetAmount = 30
 
 const change = computeChange(coins, targetAmount)
-console.log(change)
+console.log('change from first approach:' + change)
+
+const makeChange = computeChangeBruteForce(randomCoins, targetAmount)
+console.log('Make change from bf approach' + makeChange)
