@@ -91,4 +91,10 @@ We have two options: keep, or not keep?
 
 In our worst case, we have two nested recursive calls. We learned in the fibonacci solution that this gives us exponential time complexity, but also that we can optimize this.
 
-Let's look at our original solution and try to optimize it with memoization.
+Let's look at our original solution and try to optimize it with memoization to fix this O(2^n) time complexity.
+
+**After memoization**:
+
+So, what's our new time complexity?
+
+Now, we have O(n*c) where c is our capacity. This is because we depend on our knapsack's capacity as well as our input because with a larger capacity, we have more options we need to evaluate. 
