@@ -30,5 +30,3 @@ const todoListItems = ['Walk the dog', 'clean the toilet', 'buy groceries', 'ord
 console.log(getPermutations(todoListItems))
 
 // Time Complexity: this one you kind of have to log out the calls and results, but this is actually factorial time complexity O(n!)
-
-// PERMUTATIONS WITH REPETITION
